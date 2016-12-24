@@ -47,15 +47,13 @@ var isEven = function(n) {
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
-	if (n === 0) {
-		return 0;
-	}
-	return Math.abs(n) + sumBelow(Math.abs(n)-1);
+
 };
 
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+
 };
 
 // 7. Compute the exponent of a number.
@@ -71,6 +69,15 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+	if (n === 1) {
+		return true;
+	}
+	if (n < 1) {
+		return false;
+	}
+
+
+	return powerOfTwo(n / 2);
 };
 
 // 9. Write a function that reverses a string.
