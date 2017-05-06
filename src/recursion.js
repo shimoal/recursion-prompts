@@ -60,6 +60,29 @@ var sumBelow = function(n) {
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
 
+	if (!Array.isArray(x)) {
+		var array = [];
+		array.push(x + 1);
+	} else {
+		var array = x;
+	}
+
+	//if x[x.length - 1] is equal to y
+	if (array[array.length - 1] === y) {
+		array.pop();
+		return array;
+	}
+
+	var newNum = array[array.length - 1] + 1;
+	array.push(newNum);
+	return range(array, y);
+
+	
+	//add one to the last element in x
+	//push that new number to x
+	//call range on array and y
+
+
 }
 
 // 7. Compute the exponent of a number.
@@ -68,6 +91,12 @@ var range = function(x, y) {
 // exponent(4,3); // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
+
+	if (exp === 1) {
+		return 1;
+	}
+	base = base * base;
+	return exponent(base, exp - 1);
 };
 
 // 8. Determine if a number is a power of two.
